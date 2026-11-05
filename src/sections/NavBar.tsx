@@ -1,4 +1,5 @@
 import { LogoLockup } from "@/components/ui/Logo";
+import { DashboardMenu } from "@/sections/DashboardMenu";
 
 const navItems = [
   { label: "Platform", href: "#platform" },
@@ -15,16 +16,19 @@ export function NavBar() {
         <a className="flex items-center transition duration-300 hover:opacity-90" href="#home" aria-label="Neuvara home">
           <LogoLockup />
         </a>
-        <div className="hidden items-center gap-7 md:flex">
-          {navItems.map((item) => (
-            <a
-              className="nav-link text-sm font-medium text-slate-300 transition duration-300 hover:text-white"
-              href={item.href}
-              key={item.href}
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="flex items-center gap-5 lg:gap-7">
+          <div className="hidden items-center gap-5 md:flex lg:gap-7">
+            {navItems.map((item) => (
+              <a
+                className="nav-link text-sm font-medium text-slate-300 transition duration-300 hover:text-white"
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <DashboardMenu />
         </div>
       </nav>
       <div className="border-t border-white/10 md:hidden">
